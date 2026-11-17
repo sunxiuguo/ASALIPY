@@ -56,7 +56,7 @@ In the following the list of the equations solved for each reactor model
 ## **1-D Pseudo-Homogeneous Plug Flow Reactor: *Transient***
 #### Mass balance
 ```math
-\frac{\partial &omega;_{i}}{\partial t} = -\frac{\dot{m}}{A}\frac{\partial &omega;_{i}}{\partial z} + D^{mix}_{i}\frac{\partial^2 &omega;_{i}}{\partial^2 z} + \frac{MW_{i}{R_{i}}^{hom}}{&rho;} + \frac{&alpha;MW_{i}{R_{i}}^{het}}{&rho;}
+\frac{\partial &omega;_{i}}{\partial t} = -\frac{\dot{m}}{A&rho;}\frac{\partial &omega;_{i}}{\partial z} + D^{mix}_{i}\frac{\partial^2 &omega;_{i}}{\partial z^2} + \frac{MW_{i}{R_{i}}^{hom}}{&rho;} + \frac{&alpha;MW_{i}{R_{i}}^{het}}{&rho;}
 ```
 #### Coverage balance
 ```math
@@ -64,13 +64,13 @@ In the following the list of the equations solved for each reactor model
 ```
 #### Energy balance
 ```math
-\frac{\partial T}{\partial t} = -\frac{\dot{m}}{A&rho;}\frac{\partial T}{\partial z} +  \frac{k^{gas}_{mix}}{&rho;c_{p}}\frac{\partial^2 T}{\partial^2 z} + \frac{Q^{hom}}{&rho;c_{p}} + \frac{&alpha;Q^{het}}{&rho;c_{p}}
+\frac{\partial T}{\partial t} = -\frac{\dot{m}}{A&rho;}\frac{\partial T}{\partial z} +  \frac{k^{gas}_{mix}}{&rho;c_{p}}\frac{\partial^2 T}{\partial z^2} + \frac{Q^{hom}}{&rho;c_{p}} + \frac{&alpha;Q^{het}}{&rho;c_{p}}
 ```
 
 ## **1-D Heterogeneous Plug Flow Reactor: *Steady-State***
 #### Mass balance
 ```math
-0 = -\frac{\dot{m}}{A&rho;}\frac{\partial &omega;_{i}}{\partial z} + D^{mix}_{i}\frac{\partial^2 &omega;_{i}}{\partial^2 z} -\frac{A_{s}K_{mat}}{&epsi;}(&omega;_{i} - &omega;^S_{i})+ \frac{MW_{i}{R_{i}}^{hom}}{&rho;}
+0 = -\frac{\dot{m}}{A&rho;}\frac{\partial &omega;_{i}}{\partial z} + D^{mix}_{i}\frac{\partial^2 &omega;_{i}}{\partial z^2} -\frac{A_{s}K_{mat}}{&epsi;}(&omega;_{i} - &omega;^S_{i})+ \frac{MW_{i}{R_{i}}^{hom}}{&rho;}
 ```
 #### Solid mass balance
 ```math
@@ -82,18 +82,18 @@ In the following the list of the equations solved for each reactor model
 ```
 #### Energy balance
 ```math
-0 = -\frac{\dot{m}}{A&rho;}\frac{\partial T}{\partial z} +  \frac{k^{gas}_{mix}}{&rho;c_{p}}\frac{\partial^2 T}{\partial^2 z} + \frac{Q^{hom}}{&rho;c_{p}} - \frac{A_{s}h(T - T^s)}{&rho;c_{p}&epsi;}
+0 = -\frac{\dot{m}}{A&rho;}\frac{\partial T}{\partial z} +  \frac{k^{gas}_{mix}}{&rho;c_{p}}\frac{\partial^2 T}{\partial z^2} + \frac{Q^{hom}}{&rho;c_{p}} - \frac{A_{s}h(T - T^s)}{&rho;c_{p}&epsi;}
 ```
 
 #### Solid energy balance
 ```math
-0 = \frac{k^S}{&rho;^Sc_{p}^S}\frac{\partial^2 T^S}{\partial^2 z} + \frac{&alpha;Q^{het}}{&rho;^Sc_{p}^S(1-&epsi;)} + \frac{A_{s}h(T - T^s)}{&rho;^Sc_{p}^S(1-&epsi;)}
+0 = \frac{k^S}{&rho;^Sc_{p}^S}\frac{\partial^2 T^S}{\partial z^2} + \frac{&alpha;Q^{het}}{&rho;^Sc_{p}^S(1-&epsi;)} + \frac{A_{s}h(T - T^s)}{&rho;^Sc_{p}^S(1-&epsi;)}
 ```
 
 ## **1-D Heterogeneous Plug Flow Reactor: *Transient***
 #### Mass balance
 ```math
-\frac{\partial &omega;_{i}}{dt} = -\frac{\dot{m}}{A&rho;}\frac{\partial &omega;_{i}}{\partial z}  + D^{mix}_{i}\frac{\partial^2 &omega;_{i}}{\partial^2 z} -\frac{A_{s}K_{mat}}{&epsi;}(&omega;_{i} - &omega;^S_{i})+ \frac{MW_{i}{R_{i}}^{hom}}{&rho;}
+\frac{\partial &omega;_{i}}{\partial t} = -\frac{\dot{m}}{A&rho;}\frac{\partial &omega;_{i}}{\partial z}  + D^{mix}_{i}\frac{\partial^2 &omega;_{i}}{\partial z^2} -\frac{A_{s}K_{mat}}{&epsi;}(&omega;_{i} - &omega;^S_{i})+ \frac{MW_{i}{R_{i}}^{hom}}{&rho;}
 ```
 #### Solid mass balance
 ```math
@@ -105,12 +105,12 @@ In the following the list of the equations solved for each reactor model
 ```
 #### Energy balance
 ```math
-\frac{\partial T}{\partial t} = -\frac{\dot{m}}{A&rho;}\frac{\partial T}{\partial z} +  \frac{k^{gas}_{mix}}{&rho;c_{p}}\frac{\partial^2 T}{\partial^2 z} + \frac{Q^{hom}}{&rho;c_{p}} - \frac{A_{s}h(T - T^s)}{&rho;c_{p}&epsi;}
+\frac{\partial T}{\partial t} = -\frac{\dot{m}}{A&rho;}\frac{\partial T}{\partial z} +  \frac{k^{gas}_{mix}}{&rho;c_{p}}\frac{\partial^2 T}{\partial z^2} + \frac{Q^{hom}}{&rho;c_{p}} - \frac{A_{s}h(T - T^s)}{&rho;c_{p}&epsi;}
 ```
 
 #### Solid energy balance
 ```math
-\frac{\partial T^S}{\partial t} = \frac{k^S}{&rho;^Sc_{p}^S}\frac{\partial^2 T^S}{\partial^2 z} + \frac{&alpha;Q^{het}}{&rho;^Sc_{p}^S(1-&epsi;)} + \frac{A_{s}h(T - T^s)}{&rho;^Sc_{p}^S(1-&epsi;)}
+\frac{\partial T^S}{\partial t} = \frac{k^S}{&rho;^Sc_{p}^S}\frac{\partial^2 T^S}{\partial z^2} + \frac{&alpha;Q^{het}}{&rho;^Sc_{p}^S(1-&epsi;)} + \frac{A_{s}h(T - T^s)}{&rho;^Sc_{p}^S(1-&epsi;)}
 ```
 
 
@@ -139,7 +139,7 @@ Here is the symbols meaning:
 |$k^S$|Solid thermal conductivity|$\frac{W}{mK}$|
 |$K_{mat}$|Gas-to-solid mass transfer coefficient|$\frac{m}{s}$|
 |$m$|Total mass|$kg$|
-|$\dot{m}$|Inlet mass flow rate|$\frac{kg}{m^3s}$|
+|$\dot{m}$|Inlet mass flow rate|$\frac{kg}{s}$|
 |$MW_{i}$|Gas specie molecular weight|$\frac{kg}{kmol}$|
 |$Q^{hom}$|Heat of reaction from homogeneous reactions|$\frac{J}{m^3s}$|
 |$Q^{het}$|Heat of reaction from heterogeneous reactions|$\frac{J}{m^2s}$|
